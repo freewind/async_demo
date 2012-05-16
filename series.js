@@ -16,7 +16,7 @@ var t = require('./t');
 var log = t.log;
 
 /**
- * 全部函数都正常执行。
+ * 全部函数都正常执行。每个函数产生的值将按顺序合并为一个数组，传给最终的callback。
  */
 // 1.1
 async.series([
@@ -29,7 +29,7 @@ async.series([
 });
 
 /**
- * 中间有函数出错。
+ * 中间有函数出错。出错之后的函数不会执行，错误及之前正常执行的函数结果将传给最终的callback。
  */
 // 1.2
 async.series([
@@ -42,7 +42,7 @@ async.series([
 });
 
 /**
- * 如果某个函数传的数据是undefined, null, {}, []等，会是什么情况
+ * 如果某个函数传的数据是undefined, null, {}, []等，它们会原样传给最终callback。
  */
 // 1.3
 async.series([
@@ -55,4 +55,17 @@ async.series([
 ], function(err, results) {
     log('1.3 err: ', err);
     log('1.3 results: ', results);
+});
+
+/**
+ * 以json形式传入tasks。其结果也将以json形式传给最终callback。
+ */
+async.series({
+    a: function(cb) { t.inc(3, cb); },
+    b: function(cb) { t.fire(undefined, cb); },
+    c: function (cb) { t.err('myerr', cb); },
+    d: function (cb) { t.inc(8, cb); }
+}, function (err, results) {
+    log('1.4 err: ', err);
+    log('1.4 results: ', results);
 });
