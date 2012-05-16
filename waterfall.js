@@ -23,8 +23,8 @@ async.waterfall([
     function(n, cb) { log('1.1.2: ',n); t.inc(n, cb); },
     function(n, cb) { log('1.1.3: ',n); t.fire(n*n, cb); }
 ], function (err, result) {
-    log('1.1 err: ', err);
-    log('1.1 result: ', result);
+    log('1.1 err: ', err); // -> null
+    log('1.1 result: ', result); // -> 16
 });
 
 /**
@@ -37,8 +37,8 @@ async.waterfall([
     function(n, cb) { log('1.2.3: ', n); t.err('myerr', cb); },
     function(n, cb) { log('1.2.4: ', n); t.fire(n, cb); } 
 ], function (err, result) {
-    log('1.2 err: ', err);
-    log('1.2 result: ', result);    
+    log('1.2 err: ', err); // -> myerr
+    log('1.2 result: ', result); // -> undefined
 });
 
 /**
@@ -50,6 +50,6 @@ async.waterfall({
     b: function(n, cb) { log('1.3.2: ', n); t.inc(n, cb); },
     c: function(n, cb) { log('1.3.3: ', n); t.fire(n*n, cb); }
 }, function (err, result) {
-    log('1.3 err: ', err);
-    log('1.3 result: ', result);
+    log('1.3 err: ', err); // -> undefined
+    log('1.3 result: ', result); // -> undefined
 });
