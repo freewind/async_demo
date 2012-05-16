@@ -24,8 +24,8 @@ async.series([
     function(cb) { t.inc(8, cb); },
     function(cb) { t.inc(2, cb); }
 ], function(err, results) {
-    log('1.1 err: ', err);
-    log('1.1 results: ', results);
+    log('1.1 err: ', err); // -> undefined
+    log('1.1 results: ', results); // -> [ 4, 9, 3 ]
 });
 
 /**
@@ -37,8 +37,8 @@ async.series([
     function(cb) { t.err('test_err', cb); },
     function(cb) { t.inc(8, cb); }
 ], function (err, results) {
-    log('1.2 err: ', err);
-    log('1.2 results: ', results);
+    log('1.2 err: ', err); // -> test_err
+    log('1.2 results: ', results); // -> [ 4, undefined ]
 });
 
 /**
@@ -53,8 +53,8 @@ async.series([
     function(cb) { t.fire([], cb); },
     function(cb) { t.fire('abc', cb) }
 ], function(err, results) {
-    log('1.3 err: ', err);
-    log('1.3 results: ', results);
+    log('1.3 err: ', err); // -> undefined
+    log('1.3 results: ', results); // -> [ 3, undefined, null, {}, [], 'abc' ]
 });
 
 /**
@@ -66,6 +66,6 @@ async.series({
     c: function (cb) { t.err('myerr', cb); },
     d: function (cb) { t.inc(8, cb); }
 }, function (err, results) {
-    log('1.4 err: ', err);
-    log('1.4 results: ', results);
+    log('1.4 err: ', err); // -> myerr
+    log('1.4 results: ', results); // -> { a: 4, b: undefined, c: undefined }
 });
