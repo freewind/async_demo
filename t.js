@@ -1,19 +1,22 @@
-exports.inc = function(n, callback) {
+exports.inc = function(n, callback, timeout) {
+    timeout = timeout || 200;
     setTimeout(function() {
         callback(null, n+1);
-    }, 200);
+    }, timeout);
 };
 
-exports.fire = function(obj, callback) {
+exports.fire = function(obj, callback, timeout) {
+    timeout = timeout || 200;
     setTimeout(function() {
         callback(null, obj);
-    }, 200);
+    }, timeout);
 };
 
-exports.err = function(errMsg, callback) {
+exports.err = function(errMsg, callback, timeout) {
+    timeout = timeout || 200;
     setTimeout(function() {
         callback(errMsg);
-    }, 200);
+    }, timeout);
 };
 
 // utils
