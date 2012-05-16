@@ -21,6 +21,10 @@ exports.err = function(errMsg, callback, timeout) {
 
 // utils
 exports.log = function(msg, obj) {
-    process.stdout.write(msg);
-    console.log(obj);
+    if(obj) {
+        process.stdout.write(msg);
+        console.log(obj);
+    }else {
+        console.log(msg);
+    }
 };
