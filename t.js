@@ -24,7 +24,12 @@ exports.log = function(msg, obj) {
     if(obj) {
         process.stdout.write(msg);
         console.log(obj);
-    }else {
+    } else {
         console.log(msg);
     }
 };
+
+exports.wait = function(mils) {
+    var now = new Date;
+    while(new Date - now <= mils);
+}
