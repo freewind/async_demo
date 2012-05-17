@@ -3,8 +3,11 @@ var t = require('./t');
 var log = t.log;
 
 /**
+ * queue相当于一个加强版的parallel，主要是限制了worker数量，不再一次性全部执行。当worker数量不够用时，新加入的任务将会排队等候，直到有新的worker可用。
  *
+ * 该函数有多个点可供回调，如worker用完时、无等候任务时、全部执行完时等。
  */
+// queue(worker, concurrency)
 
 // 定义一个queue，设worker数量为2
 var q = async.queue(function(task, callback) {
