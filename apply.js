@@ -10,6 +10,8 @@ var log = t.log;
  * 等价于：
  * async.apply(t.inc, 3);
  */
+// apply(function, arguments..)
+
 async.parallel([
     async.apply(t.inc, 3),
     async.apply(t.fire, 100)
