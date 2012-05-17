@@ -5,6 +5,8 @@ var async = require('async');
  *
  * 所以提供了这个nextTick，让同样的代码在服务器端和浏览器端表现一致。
  */
+// nextTick(callback)
+
 var calls = [];
 
 async.nextTick(function() {
