@@ -6,27 +6,40 @@ var t = require('./t');
  */
 // memoize(fn, [hasher])
 
-var slow_fn = function(name, callback) {
-    console.log('start working for: ' + name);
-    t.wait(1000);
-    console.log('finished: ' + name);
-    callback(null, 'im slow for: ' +name);
+var slow_fn = function(x, y, callback) {
+    console.log('start working for: ' + x+','+y);
+    t.wait(100);
+    console.log('finished: ' + x+','+y);
+    callback(null, 'im slow for: '+x+','+y);
 };
 
 var fn = async.memoize(slow_fn);
 
-fn('a', function(err, result) {
-    console.log(result);
-});
-
-fn('b', function(err, result) {
+fn('a','b', function(err, result) {
     console.log(result);
 });
 
 // 直接得到之前计算好的值
-fn('a', function(err, result) {
+fn('a','b', function(err, result) {
     console.log(result);
 });
+
+/**
+ * hasher可以让我们自定义如何根据参数来判断它是否已经在缓存中了。
+ */
+var fnWithHasher = async.memoize(slow_fn, function(x,y) {
+    return x+y;
+});
+
+fnWithHasher('cd','e', function(err, result) {
+    console.log(result);
+});
+
+fnWithHasher('c','de', function(err, result) {
+    console.log(result); // 可以取得前面('cd','e')的计算结果
+                         // im show for: cd,e
+});
+
 
 /**
  * 让一个已经被memoize的函数不再缓存结果。
@@ -36,7 +49,7 @@ fn('a', function(err, result) {
 var fn2 = async.unmemoize(fn);
 console.log('unmemoized');
 
-fn2('a', function(err,result) {
+fn2('a','b', function(err,result) {
     console.log(result);
 });
 
