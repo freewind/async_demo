@@ -1,3 +1,5 @@
+var moment = require('moment');
+
 exports.inc = function(n, callback, timeout) {
     timeout = timeout || 200;
     setTimeout(function() {
@@ -21,6 +23,7 @@ exports.err = function(errMsg, callback, timeout) {
 
 // utils
 exports.log = function(msg, obj) {
+    process.stdout.write(moment().format('ss.SSS')+'> ');
     if(obj) {
         process.stdout.write(msg);
         console.log(obj);
