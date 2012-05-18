@@ -24,7 +24,7 @@ exports.err = function(errMsg, callback, timeout) {
 // utils
 exports.log = function(msg, obj) {
     process.stdout.write(moment().format('ss.SSS')+'> ');
-    if(obj) {
+    if(obj!==undefined) {
         process.stdout.write(msg);
         console.log(obj);
     } else {
