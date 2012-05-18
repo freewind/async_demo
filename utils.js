@@ -27,15 +27,15 @@ fn('a','b', function(err, result) {
 /**
  * hasher可以让我们自定义如何根据参数来判断它是否已经在缓存中了。
  */
-var fnWithHasher = async.memoize(slow_fn, function(x,y) {
+var fn_hasher = async.memoize(slow_fn, function(x,y) {
     return x+y;
 });
 
-fnWithHasher('cd','e', function(err, result) {
+fn_hasher('cd','e', function(err, result) {
     console.log(result);
 });
 
-fnWithHasher('c','de', function(err, result) {
+fn_hasher('c','de', function(err, result) {
     console.log(result); // 可以取得前面('cd','e')的计算结果
                          // im show for: cd,e
 });
