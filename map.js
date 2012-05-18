@@ -3,8 +3,6 @@ var async = require('async');
 var t = require('./t');
 var log = t.log;
 
-var arr = [{name:'Jack', delay:200}, {name:'Mike', delay: 100}, {name:'Freewind', delay:300}, {name:'Test', delay: 50}];
-
 /**
  * 对集合中的每一个元素，执行某个异步操作，得到结果。所有的结果将汇总到最终的callback里。与forEach的区别是，forEach只关心操作不管最后的值，而map关心的最后产生的值。
  *
@@ -13,6 +11,8 @@ var arr = [{name:'Jack', delay:200}, {name:'Mike', delay: 100}, {name:'Freewind'
  * 2. 顺序执行。对集合中的元素一个一个执行操作，结果汇总到最终callback里。如果出错，则立刻返回错误以及已经执行完的结果，未执行的被忽略。
  */
 // map(arr, iterator(item, callback), callback(err, results))
+
+var arr = [{name:'Jack', delay:200}, {name:'Mike', delay: 100}, {name:'Freewind', delay:300}, {name:'Test', delay: 50}];
 
 /**
  * 所有操作均正确执行，未出错。所有结果按元素顺序汇总给最终的callback。
