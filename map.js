@@ -22,7 +22,7 @@ async.map(arr, function(item, callback) {
     log('1.1 enter: ' + item.name);
     setTimeout(function() {
         log('1.1 handle: ' + item.name);
-        callback(null, item.name);
+        callback(null, item.name + '!!!');
     }, item.delay);
 }, function(err,results) {
     log('1.1 err: ', err);
@@ -37,7 +37,7 @@ async.map(arr, function(item, callback) {
 // 54.789> 1.1 handle: Jack
 // 54.879> 1.1 handle: Freewind
 // 54.879> 1.1 err:
-// 54.879> 1.1 results: [ 'Jack', 'Mike', 'Freewind', 'Test' ]
+// 54.879> 1.1 results: [ 'Jack!!!', 'Mike!!!', 'Freewind!!!', 'Test!!!' ]
 
 /**
  *  如果中途出错，立刻将错误、以及已经执行完成的结果汇总给最终callback。未执行完的将会在结果数组中用占个空位。
@@ -47,7 +47,7 @@ async.map(arr, function(item, callback) {
     setTimeout(function() {
         log('1.2 handle: ' + item.name);
         if(item.name==='Jack') callback('myerr');
-        else callback(null, item.name);
+        else callback(null, item.name+'!!!');
     }, item.delay);
 }, function(err, results) {
     log('1.2 err: ', err);
@@ -61,7 +61,7 @@ async.map(arr, function(item, callback) {
 // 54.679> 1.2 handle: Mike
 // 54.789> 1.2 handle: Jack
 // 54.789> 1.2 err: myerr
-// 54.789> 1.2 results: [ undefined, 'Mike', , 'Test' ]
+// 54.789> 1.2 results: [ undefined, 'Mike!!!', , 'Test!!!' ]
 // 54.879> 1.2 handle: Freewind
 
 /**
@@ -71,7 +71,7 @@ async.mapSeries(arr, function(item, callback) {
     log('1.3 enter: ' + item.name);
     setTimeout(function() {
         log('1.3 handle: ' + item.name);
-        callback(null, item.name);
+        callback(null, item.name+'!!!');
     }, item.delay);
 }, function(err,results) {
     log('1.3 err: ', err);
@@ -86,7 +86,7 @@ async.mapSeries(arr, function(item, callback) {
 // 55.209> 1.3 enter: Test
 // 55.269> 1.3 handle: Test
 // 55.269> 1.3 err:
-// 55.269> 1.3 results: [ 'Jack', 'Mike', 'Freewind', 'Test' ]
+// 55.269> 1.3 results: [ 'Jack!!!', 'Mike!!!', 'Freewind!!!', 'Test!!!' ]
 
 /**
  * 顺序执行过程中出错，只把错误以及执行完的传给最终callback，未执行的忽略。
@@ -96,7 +96,7 @@ async.mapSeries(arr, function(item, callback) {
     setTimeout(function() {
         log('1.4 handle: ' + item.name);
         if(item.name==='Mike') callback('myerr');
-        else callback(null, item.name);
+        else callback(null, item.name+'!!!');
     }, item.delay);
 }, function(err, results) {
     log('1.4 err: ', err);
@@ -107,4 +107,4 @@ async.mapSeries(arr, function(item, callback) {
 // 47.821> 1.4 enter: Mike
 // 47.931> 1.4 handle: Mike
 // 47.931> 1.4 err: myerr
-// 47.932> 1.4 results: [ 'Jack', undefined ]
+// 47.932> 1.4 results: [ 'Jack!!!', undefined ]
