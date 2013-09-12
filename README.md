@@ -22,20 +22,21 @@ https://github.com/caolan/async
 3. map.js增加mapLimit函数
 4. filter_reject.js对注释补充
 5. filter_reject.js增加rejectSeries函数
-5. reduce.js增加注释
-6. detect.js增加注释
-7. sortBy.js增加注释
-8. some.js对注释补充
-9. every.js对注释补充和修改
-10. series.js调整注释格式
-11. parallel.js调整注释格式
-12. parallel.js增加parallelLimit函数
-13. whilist_until.js调整注释格式
-14. whilist_until.js增加doWhilst函数
-15. whilist_until.js增加doUntil函数
-16. whilist_until.js增加forever函数
-17. waterfall.js调整注释格式
-18. 增加compose.js文件
-19. apply.js补充注释并增加一个实例
+6. reduce.js增加注释
+7. detect.js增加注释
+8. sortBy.js增加注释
+9. some.js对注释补充
+10. every.js对注释补充和修改
+11. series.js调整注释格式
+12. parallel.js调整注释格式
+13. parallel.js增加parallelLimit函数
+14. whilist_until.js调整注释格式
+15. whilist_until.js增加doWhilst函数
+16. whilist_until.js增加doUntil函数
+17. whilist_until.js增加forever函数
+18. waterfall.js调整注释格式
+19. 增加compose.js文件
+20. apply.js补充注释并增加一个实例
+21. 修改nextTick.js实例
 
 
