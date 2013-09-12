@@ -4,7 +4,7 @@ var t = require('./t');
 var log = t.log;
 
 /**
- * 将合并多个异步操作的结果合并为一个数组。
+ * 将多个异步操作的结果合并为一个数组。
  */
 // concat(arr, iterator(item,callback(err,result)), callback(err,result))
 

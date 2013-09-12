@@ -27,3 +27,4 @@ https://github.com/caolan/async
 7. sortBy.js增加注释
 8. some.js对注释补充
 9. every.js对注释补充和修改
+10. series.js规范调用注释格式
