@@ -33,3 +33,4 @@ https://github.com/caolan/async
 13. whilist_until.js调整注释格式
 14. whilist_until.js增加doWhilst函数
 15. whilist_until.js增加doUntil函数
+16. whilist_until.js增加forever函数
