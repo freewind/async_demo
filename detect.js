@@ -3,14 +3,21 @@ var async = require('async');
 var t = require('./t');
 var log = t.log;
 
-/** 
- * ����ȡ�ü��������������ĵ�һ��Ԫ�ء�����Ϊ������˳��ִ�����ַ�ʽ���ֱ��Ӧ����detect��detectSeries��
+/**
+ * 用于取得集合中满足条件的第一个元素。
+ * 它分为并行与顺序执行两种方式，分别对应函数detect和detectSeries。
  */
-
 // detect(array, iterator(item,callback(test)), callback(result)
-var arr = [{value:1,delay:500},
-           {value:2,delay:200},
-           {value:3,delay:300}];
+
+var arr = [
+    {value:1,delay:500},
+    {value:2,delay:200},
+    {value:3,delay:300}
+];
+
+/**
+ *  并行执行，通过t.inc做一个累加器，得到第一个满足条件的结果对象
+ */
 async.detect(arr, function(item,callback){
     log('1.1 enter: ', item.value);
     t.inc(item.value, function(err,n) {
@@ -29,6 +36,9 @@ async.detect(arr, function(item,callback){
 // 10.438> 1.1 handle: 1
 // 10.438> 1.1 handle: 1
 
+/**
+ *  串行执行，通过t.inc做一个累加器，得到第一个满足条件的结果对象
+ */
 async.detectSeries(arr, function(item,callback) {
     log('1.2 enter: ', item.value);
     t.inc(item.value, function(err,n) {
