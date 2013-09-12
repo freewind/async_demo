@@ -43,7 +43,7 @@ async.times(3, function(n, callback){
 //    { id: 'user2', delay: 0 } ]
 
 /**
-*  与time唯一不同的是同步执行
+*  timesSeries与time唯一不同的是，同步执行
 */
 //timesSeries(n, callback)
 
