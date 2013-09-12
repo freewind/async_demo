@@ -28,3 +28,5 @@ https://github.com/caolan/async
 8. some.js对注释补充
 9. every.js对注释补充和修改
 10. series.js规范调用注释格式
+11. parallel.js规范调用注释格式
+12. parallel.js增加parallelLimit函数
