@@ -4,15 +4,15 @@ var t = require('./t');
 var log = t.log;
 
 /**
- * Èç¹û¼¯ºÏÀïÃ¿Ò»¸öÔªËØ¶¼Âú×ãÌõ¼ş£¬Ôò´«¸ø×îÖÕ»Øµ÷µÄresultÎªtrue£¬·ñÔòÎªfalse
+ * å¦‚æœé›†åˆé‡Œæ¯ä¸€ä¸ªå…ƒç´ éƒ½æ»¡è¶³æ¡ä»¶ï¼Œåˆ™ä¼ ç»™æœ€ç»ˆå›è°ƒçš„resultä¸ºtrueï¼Œå¦åˆ™ä¸ºfalse
  */
 // every(arr, iterator(item,callback), callback(result))
-//alias: any
+//alias: all
 
 var arr = [1,2,3,6];
 
 /**
- * ¼¯ºÏÖĞËùÓĞµÄÔªËØ¶¼<=10£¬ËùÒÔÎªtrue
+ * ä¸²è¡Œæ‰§è¡Œï¼Œé›†åˆä¸­æ‰€æœ‰çš„å…ƒç´ éƒ½<=10ï¼Œæ‰€ä»¥ä¸ºtrue
  */
 async.every(arr, function(item,callback){
     log('1.1 enter: ',item);
@@ -34,7 +34,7 @@ async.every(arr, function(item,callback){
 // 32.233> 1.1 result: true
 
 /**
- * ¼¯ºÏÖĞÖÁÉÙÓĞÒ»¸öÔªËØ²»´óÓÚ2£¬ËùÒÔÎªfalse
+ * ä¸²è¡Œæ‰§è¡Œï¼Œé›†åˆä¸­è‡³å°‘æœ‰ä¸€ä¸ªå…ƒç´ ä¸å¤§äº2ï¼Œæ‰€ä»¥ä¸ºfalse
  */
 async.every(arr, function(item,callback){
     log('1.2 enter: ',item);
