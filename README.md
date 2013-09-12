@@ -13,8 +13,9 @@ INSTALL
 Change Log by bsspirit
 ===================================
 
-  参考async@0.2.9版本的规范
-  https://github.com/caolan/async
+参考async@0.2.9版本的规范
+
+https://github.com/caolan/async
 
 1. forEach.js改名为each.js
 2. each.js文件中的async.forEach，改为async.each

@@ -8,6 +8,7 @@
     <file path="/map.js" changelist="9279dccf-da33-49f0-8fb9-49ee46587efe" time="1378951409624" ignored="false" />
     <file path="/filter.js" changelist="9279dccf-da33-49f0-8fb9-49ee46587efe" time="1378951766347" ignored="false" />
     <file path="/README.md" changelist="9279dccf-da33-49f0-8fb9-49ee46587efe" time="1378953166106" ignored="false" />
+    <file path="/.gitignore" changelist="9279dccf-da33-49f0-8fb9-49ee46587efe" time="1378953273168" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,10 +46,19 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="README.md" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="README.md" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="2" selection-start="259" selection-end="259" vertical-scroll-proportion="0.44444445">
+            <state line="17" column="0" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="1" column="5" selection-start="19" selection-end="19" vertical-scroll-proportion="0.027777778">
               <folding />
             </state>
           </provider>
@@ -73,6 +83,7 @@
         <option value="$PROJECT_DIR$/t.js" />
         <option value="$PROJECT_DIR$/forEach.js" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -248,13 +259,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="14" selection-end="14" vertical-scroll-proportion="0.027777778">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/t.js">
       <provider selected="true" editor-type-id="text-editor">
         <state line="27" column="42" selection-start="673" selection-end="673" vertical-scroll-proportion="0.33333334">
@@ -287,7 +291,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="2" selection-start="259" selection-end="259" vertical-scroll-proportion="0.44444445">
+        <state line="17" column="0" selection-start="256" selection-end="256" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="5" selection-start="19" selection-end="19" vertical-scroll-proportion="0.027777778">
           <folding />
         </state>
       </provider>
