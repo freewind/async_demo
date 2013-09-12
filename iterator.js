@@ -10,15 +10,9 @@ var log = t.log;
 // async.iterator(tasks)
 
 var iter = async.iterator([
-    function () {
-        log('I am 111')
-    },
-    function () {
-        log('I am 222')
-    },
-    function () {
-        log('I am 333')
-    }
+    function () {log('I am 111')},
+    function () {log('I am 222')},
+    function () {log('I am 333')}
 ]);
 
 /**

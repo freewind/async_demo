@@ -40,5 +40,6 @@ https://github.com/caolan/async
 21. 修改nextTick.js实例
 22. 增加times.js文件，包括times和timesSeries函数
 23. 修改iterator.js实例
+24. 修正auto.js关于第二个实例的错误解释
 
 
