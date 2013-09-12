@@ -4,7 +4,7 @@ var t = require('./t');
 var log = t.log;
 
 /**
- * µ±¼¯ºÏÖĞÊÇ·ñÓĞÖÁÉÙÒ»¸öÔªËØÂú×ãÌõ¼şÊ±£¬×îÖÕcallbackµÃµ½µÄÖµÎªtrue£¬·ñÔòÎªfalse.
+ * å½“é›†åˆä¸­æ˜¯å¦æœ‰è‡³å°‘ä¸€ä¸ªå…ƒç´ æ»¡è¶³æ¡ä»¶æ—¶ï¼Œæœ€ç»ˆcallbackå¾—åˆ°çš„å€¼ä¸ºtrueï¼Œå¦åˆ™ä¸ºfalse.
  */
 // some(arr, iterator(item,callback(test)), callback(result))
 //alias: any
@@ -12,7 +12,7 @@ var log = t.log;
 var arr = [1,2,3,6];
 
 /**
- * ¼¯ºÏÖĞÖÁÉÙÓĞÒ»¸öÔªËØ<=3£¬ËùÒÔ½á¹ûÎªtrue
+ * ä¸²è¡Œæ‰§è¡Œï¼Œé›†åˆä¸­è‡³å°‘æœ‰ä¸€ä¸ªå…ƒç´ <=3ï¼Œæ‰€ä»¥ç»“æœä¸ºtrue
  */
 // 1.1
 async.some(arr, function(item,callback){
@@ -20,7 +20,7 @@ async.some(arr, function(item,callback){
     setTimeout(function(){
         log('1.1 handle: ',item);
         callback(item<=3);
-    },100);    
+    },100);
 }, function(result) {
     log('1.1 result: ', result);
 });
@@ -36,7 +36,7 @@ async.some(arr, function(item,callback){
 
 
 /**
- * ¼¯ºÏÖĞÃ»ÓĞÒ»¸öÔªËØ>10£¬ËùÒÔ½á¹ûÎªfalse
+ * ä¸²è¡Œæ‰§è¡Œï¼Œé›†åˆä¸­æ²¡æœ‰ä¸€ä¸ªå…ƒç´ >10ï¼Œæ‰€ä»¥ç»“æœä¸ºfalse
  */
 async.some(arr, function(item,callback){
     log('1.2 enter: ',item);

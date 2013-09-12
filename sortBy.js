@@ -4,12 +4,15 @@ var t = require('./t');
 var log = t.log;
 
 /**
- * ¶Ô¼¯ºÏÄÚµÄÔªËØ½øÐÐÅÅÐò£¬ÒÀ¾ÝÃ¿¸öÔªËØ½øÐÐÄ³Òì²½²Ù×÷ºó²úÉúµÄÖµ£¬´ÓÐ¡µ½´óÅÅÐò¡£
+ * å¯¹é›†åˆå†…çš„å…ƒç´ è¿›è¡ŒæŽ’åºï¼Œä¾æ®æ¯ä¸ªå…ƒç´ è¿›è¡ŒæŸå¼‚æ­¥æ“ä½œåŽäº§ç”Ÿçš„å€¼ï¼Œä»Žå°åˆ°å¤§æŽ’åºã€‚
  */
 // sortBy(array, iterator(item,callback(err,result)), callback(err,results))
 
 var arr = [3,6,1];
 
+/**
+ * é€šè¿‡å¼‚æ­¥è¿­ä»£å™¨ï¼Œå¯¹é›†åˆè¿›è¡ŒæŽ’åº
+ */
 async.sortBy(arr, function(item, callback) {
     setTimeout(function() {
         callback(null,item);
@@ -21,6 +24,9 @@ async.sortBy(arr, function(item, callback) {
 // 26.562> 1.1 err: null
 // 26.562> 1.1 results: [ 1, 3, 6 ]
 
+/**
+ * è¿­ä»£å‡ºé”™ï¼Œcallbackè¿”å›žerrï¼Œæ²¡æœ‰results
+ */
 async.sortBy(arr, function(item, callback) {
     setTimeout(function() {
         if(item===6) callback('myerr');

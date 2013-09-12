@@ -24,3 +24,5 @@ https://github.com/caolan/async
 5. filter_reject.js增加rejectSeries函数
 5. reduce.js增加注释
 6. detect.js增加注释
+7. sortBy.js增加注释
+8. some.js对注释进行补充
