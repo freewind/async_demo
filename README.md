@@ -38,5 +38,6 @@ https://github.com/caolan/async
 19. 增加compose.js文件
 20. apply.js补充注释并增加一个实例
 21. 修改nextTick.js实例
+22. 增加times.js文件，包括times和timesSeries函数
 
 
