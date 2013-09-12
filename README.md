@@ -27,6 +27,9 @@ https://github.com/caolan/async
 7. sortBy.js增加注释
 8. some.js对注释补充
 9. every.js对注释补充和修改
-10. series.js规范调用注释格式
-11. parallel.js规范调用注释格式
+10. series.js调整注释格式
+11. parallel.js调整注释格式
 12. parallel.js增加parallelLimit函数
+13. whilist_until.js调整注释格式
+14. whilist_until.js增加doWhilst函数
+15. whilist_until.js增加doUntil函数
