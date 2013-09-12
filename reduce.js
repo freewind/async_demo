@@ -4,13 +4,16 @@ var t = require('./t');
 var log = t.log;
 
 /**
- * Reduce¿ÉÒÔÈÃÎÒÃÇ¸ø¶¨Ò»¸ö³õÊ¼Öµ£¬ÓÃËüÓë¼¯ºÏÖĞµÄÃ¿Ò»¸öÔªËØ×öÔËËã£¬×îºóµÃµ½Ò»¸öÖµ¡£reduce´Ó×óÏòÓÒÀ´±éÀúÔªËØ£¬Èç¹ûÏë´ÓÓÒÏò×ó£¬¿ÉÊ¹ÓÃreduceRight¡£
+ * Reduceå¯ä»¥è®©æˆ‘ä»¬ç»™å®šä¸€ä¸ªåˆå§‹å€¼ï¼Œç”¨å®ƒä¸é›†åˆä¸­çš„æ¯ä¸€ä¸ªå…ƒç´ åšè¿ç®—ï¼Œæœ€åå¾—åˆ°ä¸€ä¸ªå€¼ã€‚reduceä»å·¦å‘å³æ¥éå†å…ƒç´ ï¼Œå¦‚æœæƒ³ä»å³å‘å·¦ï¼Œå¯ä½¿ç”¨reduceRightã€‚
  */
 //reduce(arr, memo, iterator(memo,item,callback), callback(err,result))
 //alias: inject, foldl
 
 var arr = [1,3,5];
 
+/**
+ * é¡ºåºæ‰§è¡Œ
+ */
 async.reduce(arr, 100, function(memo, item, callback) {
     log('1.1 enter: ' + memo +', ' + item);
     setTimeout(function() {
@@ -26,6 +29,9 @@ async.reduce(arr, 100, function(memo, item, callback) {
 // 29.109> 1.1 err:
 // 29.109> 1.1 result: 109
 
+/**
+ * é¡ºåºæ‰§è¡Œè¿‡ç¨‹ä¸­å‡ºé”™ï¼ŒåªæŠŠé”™è¯¯ä¼ ç»™æœ€ç»ˆcallbackï¼Œç»“æœæ˜¯null
+ */
 async.reduce(arr, 100, function(memo, item, callback) {
     log('1.2 enter: ' + memo +', ' + item);
     setTimeout(function() {
@@ -41,7 +47,11 @@ async.reduce(arr, 100, function(memo, item, callback) {
 // 05.760> 1.2 err: myerr
 // 05.760> 1.2 result:
 
-//alias: foldr
+/**
+ * é¡ºåºæ‰§è¡Œä»å³å‘å·¦
+ *
+ * alias: foldr
+ */
 async.reduceRight(arr, 100, function(memo, item, callback) {
     log('1.3 enter: ' + memo +', ' + item);
     setTimeout(function() {
@@ -57,7 +67,9 @@ async.reduceRight(arr, 100, function(memo, item, callback) {
 // 29.109> 1.3 err:
 // 29.109> 1.3 result: 109
 
-//
+/**
+ *  é€šè¿‡t.incåšä¸€ä¸ªç´¯åŠ å™¨ï¼Œå‚ä¸reduceçš„è®¡ç®—
+ */
 async.reduce(arr, 100, function(memo,item,callback) {
     log('1.4 enter: '+memo+','+item);
     t.inc(item, function(err,n) {
@@ -78,6 +90,9 @@ async.reduce(arr, 100, function(memo,item,callback) {
 // 29.409> 1.4 result: 112
 // --> spent 0.62s
 
+/**
+ *  é€šè¿‡t.incåšä¸€ä¸ªç´¯åŠ å™¨ï¼Œå¹¶å®ç°å¯¹mapçš„ç»“æœé›†åšreduce
+ */
 async.map(arr, function(item, callback) {
     log('1.5 enter: ', item);
     t.inc(item, function(err,n){

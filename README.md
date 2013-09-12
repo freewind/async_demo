@@ -22,3 +22,4 @@ https://github.com/caolan/async
 3. map.js增加mapLimit函数
 4. filter_reject.js对注释进行补充
 5. filter_reject.js增加rejectSeries函数
+5. reduce.js增加注释
