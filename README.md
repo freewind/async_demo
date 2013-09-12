@@ -35,4 +35,7 @@ https://github.com/caolan/async
 15. whilist_until.js增加doUntil函数
 16. whilist_until.js增加forever函数
 17. waterfall.js调整注释格式
+18. 增加compose.js文件
+19. apply.js补充注释并增加一个实例
+
 
