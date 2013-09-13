@@ -32,6 +32,7 @@ async.parallel([
 //1.2
 function inc(a,b,callback,timeout){
     var timeout = timeout || 200;
+    t.wait(200);
     setTimeout(function() {
         callback(null, a+b);
     }, timeout);

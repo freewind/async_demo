@@ -42,6 +42,9 @@ cargo.drain = function() {
     log('all tasks have been processed');
 }
 
+/**
+ * 增加新任务
+ */
 cargo.push({name: 'A'}, function (err) {
     t.wait(300);
     log('finished processing A');

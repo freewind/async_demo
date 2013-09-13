@@ -43,5 +43,6 @@ https://github.com/caolan/async
 24. 修正auto.js关于第二个实例的错误解释
 25. 修改queue.js实例和注释
 26. 修改cargo.js文件
+27. 增加applyEach.js文件
 
 
