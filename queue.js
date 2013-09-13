@@ -39,35 +39,35 @@ q.drain = function() {
     log('all tasks have been processed');
 }
 
-///**
-// * 独立加入2个任务
-// */
-//q.push({name:'t1', run: function(cb){
-//    log('t1 is running, waiting tasks: ', q.length());
-//    t.fire('t1', cb, 400); // 400ms后执行
-//}}, function(err) {
-//    log('t1 executed');
-//});
-//log('pushed t1, waiting tasks: ', q.length());
-//
-//q.push({name:'t2',run: function(cb){
-//    log('t2 is running, waiting tasks: ', q.length());
-//    t.fire('t2', cb, 200); // 200ms后执行
-//}}, function(err) {
-//    log('t2 executed');
-//});
-//log('pushed t2, waiting tasks: ', q.length());
-////54.448> pushed t1, waiting tasks: 1
-////54.451> all workers to be used
-////54.452> pushed t2, waiting tasks: 2
-////54.452> worker is processing task: t1
-////54.453> t1 is running, waiting tasks: 1
-////54.455> no more tasks wating
-////54.455> worker is processing task: t2
-////54.455> t2 is running, waiting tasks: 0
-////54.656> t2 executed
-////54.867> t1 executed
-////54.868> all tasks have been processed
+/**
+* 独立加入2个任务
+*/
+q.push({name:'t1', run: function(cb){
+    log('t1 is running, waiting tasks: ', q.length());
+    t.fire('t1', cb, 400); // 400ms后执行
+}}, function(err) {
+    log('t1 executed');
+});
+log('pushed t1, waiting tasks: ', q.length());
+
+q.push({name:'t2',run: function(cb){
+    log('t2 is running, waiting tasks: ', q.length());
+    t.fire('t2', cb, 200); // 200ms后执行
+}}, function(err) {
+    log('t2 executed');
+});
+log('pushed t2, waiting tasks: ', q.length());
+//54.448> pushed t1, waiting tasks: 1
+//54.451> all workers to be used
+//54.452> pushed t2, waiting tasks: 2
+//54.452> worker is processing task: t1
+//54.453> t1 is running, waiting tasks: 1
+//54.455> no more tasks wating
+//54.455> worker is processing task: t2
+//54.455> t2 is running, waiting tasks: 0
+//54.656> t2 executed
+//54.867> t1 executed
+//54.868> all tasks have been processed
 
 
 // 同时加入多个任务
