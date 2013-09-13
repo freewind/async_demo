@@ -3,6 +3,8 @@ async_demo
 
 A demo for async.
 
+http://blog.fens.me/nodejs-async/
+
 INSTALL
 ===========================
 
@@ -10,7 +12,7 @@ INSTALL
 
 > cd  nodejs-async && npm install
 
-Change Log by bsspirit
+Change Log
 ===================================
 
 参考async@0.2.9版本的规范

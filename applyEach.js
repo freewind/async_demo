@@ -3,7 +3,7 @@ var t = require('./t');
 var log = t.log;
 
 /**
-* applyEach，可以实现给一数组中每个函数传参，通过callback返回。
+* applyEach，可以实现给一数组中每个函数传相同参数，通过callback返回。
 * 如果只传第一个参数，将返回一个函数对象，我可以传参调用。
 */
 // applyEach(fns, args..., callback)

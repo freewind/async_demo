@@ -24,43 +24,43 @@ var log = t.log;
  * 分析该任务，可以知道1与2可以并行执行，3需要等1和2完成，4要等3完成。
  * 可以按以下方式来使用auto函数。
  */
-//// 1.1
-//async.auto({
-//    getData: function (callback) {
-//        setTimeout(function(){
-//            console.log('1.1: got data');
-//             callback(null, 'mydata');
-//        }, 300);
-//    },
-//    makeFolder: function (callback) {
-//        setTimeout(function(){
-//            console.log('1.1: made folder');
-//            callback(null, 'myfolder');
-//        }, 200);
-//    },
-//    writeFile: ['getData', 'makeFolder', function(callback) {
-//        setTimeout(function(){
-//            console.log('1.1: wrote file');
-//            callback(null, 'myfile');
-//        }, 300);
-//    }],
-//    emailFiles: ['writeFile', function(callback, results) {
-//        log('1.1: emailed file: ', results.writeFile);
-//        callback(null, results.writeFile);
-//    }]
-//}, function(err, results) {
-//    log('1.1: err: ', err);
-//    log('1.1: results: ', results);
-//});
-////1.1: made folder
-////1.1: got data
-////1.1: wrote file
-////20.120> 1.1: emailed file: myfile
-////20.125> 1.1: err: null
-////20.127> 1.1: results: { makeFolder: 'myfolder',
-////    getData: 'mydata',
-////    writeFile: 'myfile',
-////    emailFiles: 'myfile' }
+// 1.1
+async.auto({
+    getData: function (callback) {
+        setTimeout(function(){
+            console.log('1.1: got data');
+             callback(null, 'mydata');
+        }, 300);
+    },
+    makeFolder: function (callback) {
+        setTimeout(function(){
+            console.log('1.1: made folder');
+            callback(null, 'myfolder');
+        }, 200);
+    },
+    writeFile: ['getData', 'makeFolder', function(callback) {
+        setTimeout(function(){
+            console.log('1.1: wrote file');
+            callback(null, 'myfile');
+        }, 300);
+    }],
+    emailFiles: ['writeFile', function(callback, results) {
+        log('1.1: emailed file: ', results.writeFile);
+        callback(null, results.writeFile);
+    }]
+}, function(err, results) {
+    log('1.1: err: ', err);
+    log('1.1: results: ', results);
+});
+//1.1: made folder
+//1.1: got data
+//1.1: wrote file
+//20.120> 1.1: emailed file: myfile
+//20.125> 1.1: err: null
+//20.127> 1.1: results: { makeFolder: 'myfolder',
+//    getData: 'mydata',
+//    writeFile: 'myfile',
+//    emailFiles: 'myfile' }
 
 
 
