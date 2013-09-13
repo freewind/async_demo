@@ -44,5 +44,6 @@ https://github.com/caolan/async
 25. 修改queue.js实例和注释
 26. 修改cargo.js文件
 27. 增加applyEach.js文件
+28. 修改utils.js实例和注释
 
 
