@@ -40,8 +40,8 @@ async.map(arr, function(item, callback) {
 // 54.879> 1.1 results: [ 'Jack!!!', 'Mike!!!', 'Freewind!!!', 'Test!!!' ]
 
 /**
- *  如果中途出错，立刻将错误、以及已经执行完成的结果汇总给最终callback。未执行完的将会在结果数组中用占个空位。
- */
+*  如果中途出错，立刻将错误、以及已经执行完成的结果汇总给最终callback。未执行完的将会在结果数组中用占个空位。
+*/
 async.map(arr, function(item, callback) {
     log('1.2 enter: ' + item.name);
     setTimeout(function() {
@@ -65,8 +65,8 @@ async.map(arr, function(item, callback) {
 // 54.879> 1.2 handle: Freewind
 
 /**
- * 顺序执行，一个完了才执行下一个。
- */
+* 顺序执行，一个完了才执行下一个。
+*/
 async.mapSeries(arr, function(item, callback) {
     log('1.3 enter: ' + item.name);
     setTimeout(function() {
@@ -89,8 +89,8 @@ async.mapSeries(arr, function(item, callback) {
 // 55.269> 1.3 results: [ 'Jack!!!', 'Mike!!!', 'Freewind!!!', 'Test!!!' ]
 
 /**
- * 顺序执行过程中出错，只把错误以及执行完的传给最终callback，未执行的忽略。
- */
+* 顺序执行过程中出错，只把错误以及执行完的传给最终callback，未执行的忽略。
+*/
 async.mapSeries(arr, function(item, callback) {
     log('1.4 enter: ' + item.name);
     setTimeout(function() {
@@ -108,3 +108,29 @@ async.mapSeries(arr, function(item, callback) {
 // 47.931> 1.4 handle: Mike
 // 47.931> 1.4 err: myerr
 // 47.932> 1.4 results: [ 'Jack!!!', undefined ]
+
+/**
+ * 并行执行，同时最多2个函数并行，传给最终callback。
+ */
+//1.5
+async.mapLimit(arr,2, function(item, callback) {
+    log('1.5 enter: ' + item.name);
+    setTimeout(function() {
+        log('1.5 handle: ' + item.name);
+        if(item.name==='Jack') callback('myerr');
+        else callback(null, item.name+'!!!');
+    }, item.delay);
+}, function(err, results) {
+    log('1.5 err: ', err);
+    log('1.5 results: ', results);
+});
+//57.797> 1.5 enter: Jack
+//57.800> 1.5 enter: Mike
+//57.900> 1.5 handle: Mike
+//57.900> 1.5 enter: Freewind
+//58.008> 1.5 handle: Jack
+//58.009> 1.5 err: myerr
+//58.009> 1.5 results: [ undefined, 'Mike!!!' ]
+//58.208> 1.5 handle: Freewind
+//58.208> 1.5 enter: Test
+//58.273> 1.5 handle: Test
