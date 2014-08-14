@@ -10,7 +10,7 @@ INSTALL
 ===========================
 
 ```{bash}
-git clone https://github.com/caolan/async.git nodejs-async
+git clone https://github.com/bsspirit/async_demo.git
 cd  nodejs-async && npm install
 ```
 
