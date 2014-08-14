@@ -11,7 +11,7 @@ INSTALL
 
 ```{bash}
 git clone https://github.com/bsspirit/async_demo.git
-cd  nodejs-async && npm install
+cd  async_demo
 ```
 
 Change Log
