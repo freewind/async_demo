@@ -22,7 +22,7 @@ q.saturated = function() {
 
 // 当最后一个任务交给worker时，将调用该函数
 q.empty = function() {
-    log('no more tasks wating');
+    log('no more tasks waitng');
 }
 
 // 当所有任务都执行完以后，将调用该函数
