@@ -12,7 +12,7 @@ var log = t.log;
 var arr = [1,2,3,6];
 
 /**
- * 串行执行，集合中至少有一个元素<=3，所以结果为true
+ * 并行执行，集合中至少有一个元素<=3，所以结果为true
  */
 // 1.1
 async.some(arr, function(item,callback){
