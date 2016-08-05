@@ -12,7 +12,7 @@ var log = t.log;
 var arr = [1,2,3,6];
 
 /**
- * 串行执行，集合中所有的元素都<=10，所以为true
+ * 并行执行，集合中所有的元素都<=10，所以为true
  */
 async.every(arr, function(item,callback){
     log('1.1 enter: ',item);
@@ -34,7 +34,7 @@ async.every(arr, function(item,callback){
 // 32.233> 1.1 result: true
 
 /**
- * 串行执行，集合中至少有一个元素不大于2，所以为false
+ * 并行执行，集合中至少有一个元素不大于2，所以为false
  */
 async.every(arr, function(item,callback){
     log('1.2 enter: ',item);
