@@ -81,13 +81,13 @@ async.auto({
             callback(null, 'myfolder');
         }, 200);
     },
-    writeFile: ['getData', 'makeFolder', function(callback, results) {
+    writeFile: ['getData', 'makeFolder', function(results, callback) {
         setTimeout(function(){
             console.log('1.2: wrote file');
             callback('myerr');
         }, 300);
     }],
-    emailFiles: ['writeFile', function(callback, results) {
+    emailFiles: ['writeFile', function(results, callback) {
         console.log('1.2: emailed file: ' + results.writeFile);
         callback('err sending email', results.writeFile);
     }]
